@@ -1,32 +1,71 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
-        primary: "#6C63FF",
-        secondary: "#00F5FF",
-        dark: "#0F1624",
-        light: "#F7F8FA",
-        accent: "#FF5E5B",
+        primary: {
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          200: '#bae6fd',
+          300: '#7dd3fc',
+          400: '#38bdf8',
+          500: '#0ea5e9',
+          600: '#0284c7',
+          700: '#0369a1',
+          800: '#075985',
+          900: '#0c4a6e',
+          950: '#082f49',
+        },
+        secondary: {
+          50: '#ecfdf5',
+          100: '#d1fae5',
+          200: '#a7f3d0',
+          300: '#6ee7b7',
+          400: '#34d399',
+          500: '#10b981',
+          600: '#059669',
+          700: '#047857',
+          800: '#065f46',
+          900: '#064e3b',
+          950: '#022c22',
+        },
+        accent: {
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
+          950: '#172554',
+        },
+        dark: {
+          100: '#d5d5d5',
+          200: '#aaaaaa',
+          300: '#808080',
+          400: '#555555',
+          500: '#2b2b2b',
+          600: '#222222',
+          700: '#1a1a1a',
+          800: '#111111',
+          900: '#090909',
+          950: '#030303',
+        },
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
-        heading: ['Space Grotesk', 'sans-serif'],
       },
       animation: {
-        'glow': 'glow 2s ease-in-out infinite alternate',
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
-      keyframes: {
-        glow: {
-          '0%': { boxShadow: '0 0 5px rgba(108, 99, 255, 0.5)' },
-          '100%': { boxShadow: '0 0 20px rgba(108, 99, 255, 0.8)' },
-        },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
     },
   },
   plugins: [],
-}
+};
