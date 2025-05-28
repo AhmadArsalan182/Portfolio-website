@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Zap, Mail, ArrowRight, Linkedin, Twitter, Instagram, Facebook, Github } from 'lucide-react';
+import { Zap, Linkedin, Twitter, Instagram, Github } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
@@ -19,29 +19,30 @@ const Footer: React.FC = () => {
       </div>
       
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-12 mb-16">
           {/* Company info */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 flex flex-col items-center md:items-start">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
+              className="flex flex-col items-center md:items-start"
             >
-              <a href="#home" className="inline-flex items-center gap-2 mb-6">
-                <Zap className="h-6 w-6 text-accent-400" />
-                <span className="text-white text-xl font-bold bg-gradient-to-r from-accent-400 to-secondary-400 text-transparent bg-clip-text">
-                  NOVA
-                </span>
-                <span className="text-white text-xl font-bold">Studio</span>
+              <a href="#home" className="inline-flex items-center justify-center mb-6">
+                <img 
+                  src="/src/assets/LOGO.png" 
+                  alt="Company Logo" 
+                  className="h-16 w-auto" // Increased size from h-10 to h-16
+                />
               </a>
               
-              <p className="text-gray-300 mb-6">
+              <p className="text-gray-300 mb-6 text-center md:text-left">
                 We create digital experiences that are both beautiful and functional, 
                 helping businesses make a lasting impact in the digital world.
               </p>
               
-              <div className="flex gap-4">
+              <div className="flex gap-4 justify-center md:justify-start">
                 <motion.a
                   href="#"
                   className="p-2 bg-white/10 rounded-lg text-white hover:bg-accent-500/80 transition-colors duration-300"
@@ -75,20 +76,21 @@ const Footer: React.FC = () => {
           </div>
           
           {/* Quick links */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 flex flex-col items-center md:items-start">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
+              className="w-full flex flex-col items-center md:items-start"
             >
-              <h4 className="text-lg font-bold mb-6">Quick Links</h4>
-              <ul className="space-y-4">
+              <h4 className="text-lg font-bold mb-6 text-center md:text-left">Quick Links</h4>
+              <ul className="space-y-4 w-full flex flex-col items-center md:items-start">
                 {['home', 'about', 'services', 'projects', 'team', 'contact'].map((link) => (
-                  <li key={link}>
+                  <li key={link} className="w-full text-center md:text-left">
                     <button
                       onClick={() => scrollToSection(`#${link}`)}
-                      className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group"
+                      className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group mx-auto md:mx-0"
                     >
                       <span className="w-2 h-2 bg-accent-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                       {link.charAt(0).toUpperCase() + link.slice(1)}
@@ -100,20 +102,21 @@ const Footer: React.FC = () => {
           </div>
           
           {/* Services */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 flex flex-col items-center md:items-start">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
+              className="w-full flex flex-col items-center md:items-start"
             >
-              <h4 className="text-lg font-bold mb-6">Our Services</h4>
-              <ul className="space-y-4">
+              <h4 className="text-lg font-bold mb-6 text-center md:text-left">Our Services</h4>
+              <ul className="space-y-4 w-full flex flex-col items-center md:items-start">
                 {['Web Development', 'UI/UX Design', 'Mobile Apps', 'Digital Marketing', 'Brand Strategy'].map((service) => (
-                  <li key={service}>
+                  <li key={service} className="w-full text-center md:text-left">
                     <a
                       href="#services"
-                      className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group"
+                      className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group mx-auto md:mx-0"
                     >
                       <span className="w-2 h-2 bg-secondary-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                       {service}
@@ -123,51 +126,14 @@ const Footer: React.FC = () => {
               </ul>
             </motion.div>
           </div>
-          
-          {/* Newsletter */}
-          <div className="lg:col-span-1">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <h4 className="text-lg font-bold mb-6">Newsletter</h4>
-              <p className="text-gray-300 mb-4">
-                Subscribe to our newsletter to receive the latest updates and insights.
-              </p>
-              
-              <form className="flex flex-col sm:flex-row gap-3">
-                <div className="flex-grow">
-                  <div className="relative">
-                    <Mail className="h-5 w-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                    <input
-                      type="email"
-                      placeholder="Your email"
-                      className="w-full pl-10 pr-4 py-3 bg-dark-700 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500/50 transition-all duration-300 text-white"
-                    />
-                  </div>
-                </div>
-                
-                <motion.button
-                  type="submit"
-                  className="px-5 py-3 bg-primary-500 text-white rounded-lg font-medium text-base hover:bg-primary-600 transition-colors duration-300 whitespace-nowrap flex items-center justify-center"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Subscribe <ArrowRight className="ml-2 h-5 w-5" />
-                </motion.button>
-              </form>
-            </motion.div>
-          </div>
         </div>
         
-        <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 mb-4 md:mb-0">
-            © {currentYear} Nova Studio. All rights reserved.
+        <div className="border-t border-white/10 pt-10 flex flex-col items-center md:flex-row md:justify-between">
+          <p className="text-gray-400 mb-4 md:mb-0 text-center md:text-left">
+            © {currentYear} devloop. All rights reserved.
           </p>
           
-          <div className="flex gap-6">
+          <div className="flex gap-6 justify-center">
             <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">Privacy Policy</a>
             <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">Terms of Service</a>
             <a href="#" className="text-gray-400 hover:text-white transition-colors duration-300">Cookies</a>

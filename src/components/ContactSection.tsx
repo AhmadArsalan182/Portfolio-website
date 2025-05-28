@@ -226,8 +226,7 @@ const ContactSection: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-medium mb-1">Email Us</h4>
-                    <p className="text-gray-300">hello@novastudio.com</p>
-                    <p className="text-gray-300">support@novastudio.com</p>
+                    <p className="text-gray-300">team.devloop@gmail.com</p>
                   </div>
                 </div>
                 
@@ -237,21 +236,7 @@ const ContactSection: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-medium mb-1">Call Us</h4>
-                    <p className="text-gray-300">+1 (555) 123-4567</p>
-                    <p className="text-gray-300">+1 (555) 987-6543</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-primary-500/10 text-primary-400 rounded-lg">
-                    <MapPin className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-medium mb-1">Visit Us</h4>
-                    <p className="text-gray-300">
-                      123 Innovation Avenue, <br />
-                      San Francisco, CA 94103
-                    </p>
+                    <p className="text-gray-300">+923455636030</p>
                   </div>
                 </div>
               </div>
@@ -287,21 +272,6 @@ const ContactSection: React.FC = () => {
                   >
                     <Facebook className="h-5 w-5" />
                   </motion.a>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-dark-800/80 backdrop-blur-sm border border-white/10 rounded-2xl p-8 flex-grow">
-              <h3 className="text-2xl font-bold mb-6">Office Location</h3>
-              <div className="rounded-lg overflow-hidden h-64 bg-dark-700">
-                {/* Map would go here - showing placeholder */}
-                <div className="w-full h-full flex items-center justify-center bg-dark-700">
-                  <div className="text-center p-6">
-                    <MapPin className="h-12 w-12 text-primary-400 mb-4 mx-auto" />
-                    <p className="text-gray-300">
-                      123 Innovation Avenue, San Francisco, CA 94103
-                    </p>
-                  </div>
                 </div>
               </div>
             </div>

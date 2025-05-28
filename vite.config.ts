@@ -7,4 +7,12 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  server: {
+    host: true,
+    proxy: {},
+    cors: true,
+    hmr: {
+      host: '4139-202-83-161-98.ngrok-free.app'
+    }
+  }
 });
